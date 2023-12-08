@@ -2,7 +2,7 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        String[] hands = PuzzleInput.myPuzzleInput.split("\n");
+        String[] hands = PuzzleInput.puzzleInput.split("\n");
         ArrayList<String> valuedSet = new ArrayList<>();
         for (String handSet: hands) {
 
