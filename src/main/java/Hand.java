@@ -7,13 +7,13 @@ public class Hand {
     }
 
     public static Map<ArrayList<Integer>, Integer> cardHands = new HashMap<>() {{
-        put(new ArrayList<>(Arrays.asList(1, 1, 1, 1, 1)), 13);   // High card
-        put(new ArrayList<>(Arrays.asList(2, 1, 1, 1)), 14);     // Pair
-        put(new ArrayList<>(Arrays.asList(2, 2, 1)), 15);        // Two pair
-        put(new ArrayList<>(Arrays.asList(3, 2)), 16);           // Full house
-        put(new ArrayList<>(Arrays.asList(3, 1, 1)), 16);        // Three of a kind
-        put(new ArrayList<>(Arrays.asList(4, 1)), 17);           // High card
-        put(new ArrayList<>(Arrays.asList(5)), 18);              // Five of a kind
+        put(new ArrayList<>(Arrays.asList(1, 1, 1, 1, 1)), 1);   // High card
+        put(new ArrayList<>(Arrays.asList(2, 1, 1, 1)), 2);     // Pair
+        put(new ArrayList<>(Arrays.asList(2, 2, 1)), 3);        // Two pair
+        put(new ArrayList<>(Arrays.asList(3, 2)), 4);           // Full house
+        put(new ArrayList<>(Arrays.asList(3, 1, 1)), 5);        // Three of a kind
+        put(new ArrayList<>(Arrays.asList(4, 1)), 6);           // High card
+        put(new ArrayList<>(Arrays.asList(5)), 7);              // Five of a kind
     }};
 
     /**
