@@ -2,9 +2,10 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        String[] hands = PuzzleInput.puzzleInput.split("\n");
+        String[] hands = PuzzleInput.myPuzzleInput.split("\n");
         ArrayList<String> valuedSet = new ArrayList<>();
         for (String handSet: hands) {
+
             String[] handData = handSet.split(" ");
 
             String cardSet = handData[0];
@@ -17,19 +18,16 @@ public class Main {
             valuedSet.add(handValue + " " + compiledValues + " " + bet + " " + cardSet);
         }
         Collections.sort(valuedSet);
-        Collections.reverse(valuedSet);
 
         int rank = 1;
         int totalBids = 0;
         for (String values: valuedSet) {
             CompiledHand compiledHand = new CompiledHand(values);
-            totalBids += rank*compiledHand.bet;
-            System.out.println(rank + ". | " + compiledHand.normalisedHand);
+            totalBids = totalBids + (rank*compiledHand.bet);
+            //System.out.println(rank + " // " + values + " // " + (rank*compiledHand.bet) + " // " + totalBids);
+            System.out.println(rank + ". " + compiledHand.normalisedHand + " " + compiledHand.bet);
             rank++;
         }
         System.out.println("Total winnings: " + totalBids);
     }
-
-
-
 }
