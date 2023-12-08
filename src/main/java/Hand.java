@@ -23,6 +23,8 @@ public class Hand {
      */
     public static HashMap<Character, Integer> getCardTypeCounts() {
         HashMap<Character, Integer> cardTypes = new HashMap<>();
+        int jokerCount = 0;
+
         for (char card: hand){
             if (!cardTypes.containsKey(card)) {
                 cardTypes.put(card, 1);
@@ -41,10 +43,25 @@ public class Hand {
     public ArrayList<Integer> getCardTypeList() {
         HashMap<Character, Integer> cardTypes = getCardTypeCounts();
         ArrayList<Integer> cardCounts = new ArrayList<>();
+
+        int jokerCount = 0;
         for (Character cardType: cardTypes.keySet()) {
-            cardCounts.add(cardTypes.get(cardType));
+            int cardValue = cardTypes.get(cardType);
+            if (cardType == 'J') {
+                jokerCount += cardValue;
+                continue;
+            }
+            cardCounts.add(cardValue);
         }
 
+        Collections.sort(cardCounts);
+        Collections.reverse(cardCounts);
+
+        System.out.println(Arrays.toString(hand));
+        if (cardCounts.isEmpty()) {
+            cardCounts.add(0);
+        }
+        cardCounts.set(0, cardCounts.get(0)+jokerCount);
         return cardCounts;
     }
 
@@ -55,10 +72,6 @@ public class Hand {
      */
     public int getHandValue() {
         ArrayList<Integer> values = getCardTypeList();
-        Collections.sort(values);
-        Collections.reverse(values);
-
-        System.out.println(Arrays.toString(values.toArray()));
 
         return cardHands.get(values);
     }

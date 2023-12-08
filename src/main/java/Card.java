@@ -28,25 +28,25 @@ public class Card {
 
     private char getValueAlpha() {
         switch (card) {
-            case '2':
-                return 'A';
-            case '3':
-                return 'B';
-            case '4':
-                return 'C';
-            case '5':
-                return 'D';
-            case '6':
-                return 'E';
-            case '7':
-                return 'F';
-            case '8':
-                return 'G';
-            case '9':
-                return 'H';
-            case 'T':
-                return 'I';
             case 'J':
+                return 'A';
+            case '2':
+                return 'B';
+            case '3':
+                return 'C';
+            case '4':
+                return 'D';
+            case '5':
+                return 'E';
+            case '6':
+                return 'F';
+            case '7':
+                return 'G';
+            case '8':
+                return 'H';
+            case '9':
+                return 'I';
+            case 'T':
                 return 'J';
             case 'Q':
                 return 'K';
