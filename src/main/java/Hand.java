@@ -64,7 +64,7 @@ public class Hand {
     public String getCompiledValues() {
         String compiledValues = "";
         for (char card: hand) {
-            compiledValues += new Card(card).hexValue;
+            compiledValues += new Card(card).alphaValue;
         }
         return compiledValues;
     }
