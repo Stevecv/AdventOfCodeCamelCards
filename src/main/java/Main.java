@@ -23,7 +23,8 @@ public class Main {
         int totalBids = 0;
         for (String values: valuedSet) {
             CompiledHand compiledHand = new CompiledHand(values);
-            totalBids = totalBids + (rank*compiledHand.bet);
+            int winnings = (rank*compiledHand.bet);
+            totalBids += winnings;
             //System.out.println(rank + " // " + values + " // " + (rank*compiledHand.bet) + " // " + totalBids);
             System.out.println(rank + ". " + compiledHand.normalisedHand + " " + compiledHand.bet);
             rank++;

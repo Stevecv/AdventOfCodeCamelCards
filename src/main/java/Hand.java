@@ -10,8 +10,8 @@ public class Hand {
         put(new ArrayList<>(Arrays.asList(1, 1, 1, 1, 1)), 1);   // High card
         put(new ArrayList<>(Arrays.asList(2, 1, 1, 1)), 2);     // Pair
         put(new ArrayList<>(Arrays.asList(2, 2, 1)), 3);        // Two pair
-        put(new ArrayList<>(Arrays.asList(3, 2)), 4);           // Full house
-        put(new ArrayList<>(Arrays.asList(3, 1, 1)), 5);        // Three of a kind
+        put(new ArrayList<>(Arrays.asList(3, 1, 1)), 4);        // Three of a kind
+        put(new ArrayList<>(Arrays.asList(3, 2)), 5);           // Full house
         put(new ArrayList<>(Arrays.asList(4, 1)), 6);           // High card
         put(new ArrayList<>(Arrays.asList(5)), 7);              // Five of a kind
     }};
@@ -58,9 +58,16 @@ public class Hand {
         Collections.sort(values);
         Collections.reverse(values);
 
+        System.out.println(Arrays.toString(values.toArray()));
+
         return cardHands.get(values);
     }
 
+    /**
+     * Returns the values in an order that when Collections.sort() is called,
+     * will sort based on card strength
+     * @return
+     */
     public String getCompiledValues() {
         String compiledValues = "";
         for (char card: hand) {
