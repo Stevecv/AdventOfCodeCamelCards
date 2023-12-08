@@ -58,8 +58,6 @@ public class Hand {
         Collections.sort(values);
         Collections.reverse(values);
 
-        System.out.println(Arrays.toString(values.toArray()));
-
         return cardHands.get(values);
     }
 
